@@ -1,0 +1,6 @@
+#pragma once
+class IObserver{
+public:
+  virtual void Notify(IObservable*) {}
+  virtual ~IObserver(){}
+};

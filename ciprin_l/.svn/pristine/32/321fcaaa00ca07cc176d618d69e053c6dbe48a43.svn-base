@@ -1,0 +1,25 @@
+#include "MonsterFactory.hh"
+#include <fstream>
+#include <sstream>
+Character* MonsterFactory::Create(const std::string& name){
+  if (name.compare("ZombieMonster") == 0)
+    return new ZombieMonster();
+  if(name.compare("SprinterMonster") == 0)
+    return new SprinterMonster();
+  return NULL;
+}
+Character* MonsterFactory::Unserialize(const std::string& val){
+  Character *c = new Character();
+  int life;
+  double x;
+  double y;
+  std::string v (val);
+  std::istringstream iss(v);
+  iss >> life;
+  iss >> x;
+  iss >> y;
+  c->SetLife(life);
+  c->SetX(x);
+  c->SetY(y);
+  return c;
+}

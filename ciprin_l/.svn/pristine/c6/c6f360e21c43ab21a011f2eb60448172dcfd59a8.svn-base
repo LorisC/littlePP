@@ -1,0 +1,8 @@
+#pragma once
+#include "Character.hh"
+class SprinterMonster : Character
+{
+public :
+  SprinterMonster();
+  void Update();
+};

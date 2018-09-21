@@ -1,0 +1,14 @@
+#include "ZombieMonster.hh"
+#include "TimeManager.hh"
+ZombieMonster::ZombieMonster() {
+  _life = 100;
+  _x = 0;
+  _y = 0;
+}
+
+void ZombieMonster::Update(){
+  TimeManager &t =  TimeManager::GetInstance();
+  double dist = t.GetElapsedTime() / 1000;
+  _y += dist;
+  _x += 1;
+}

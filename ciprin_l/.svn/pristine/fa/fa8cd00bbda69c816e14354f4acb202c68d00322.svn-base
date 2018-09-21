@@ -1,0 +1,15 @@
+#include "SprinterMonster.hh"
+#include "TimeManager.hh"
+#include <iostream>
+SprinterMonster::SprinterMonster() {
+  _life = 25;
+}
+
+void SprinterMonster::Update() {
+  TimeManager &t =  TimeManager::GetInstance();
+  t.Update();
+  auto dist = (t.GetElapsedTime()/1000) * 5;
+  _x += dist;
+  _y += dist;
+  std::cout << _x;
+}

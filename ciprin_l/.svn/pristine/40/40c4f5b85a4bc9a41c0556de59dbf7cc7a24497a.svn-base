@@ -1,0 +1,12 @@
+#pragma once
+#include <list>
+class IObserver;
+class IObservable {
+protected:
+  std::list<IObserver*> _observers;
+public:
+  virtual void AddObserver(IObserver*) = 0;
+  virtual void RemoveObserver(IObserver*) = 0;
+protected:
+  virtual ~IObservable();
+};

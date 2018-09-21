@@ -1,0 +1,9 @@
+#pragma once
+
+#include "Character.hh"
+
+class ZombieMonster : Character{
+public :
+  ZombieMonster();
+  void  Update();
+};
